@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ces.web.stafftitle.StaffTitleBrowse"
+        focusComponent="staffTitlesTable"
+        lookupComponent="staffTitlesTable"
+        messagesPack="com.company.ces.web.stafftitle">
+    <dsContext>
+        <collectionDatasource id="staffTitlesDs"
+                              class="com.company.ces.entity.category.StaffTitle"
+                              view="_local">
+            <query>
+                <![CDATA[select e from ces$StaffTitle e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="staffTitlesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="staffTitlesTable"
+                datasource="staffTitlesDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="staffTitlesTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="excel"/>
+            </actions>
+            <columns>
+                <column id="title_id"/>
+                <column id="title_name"/>
+            </columns>
+            <rows datasource="staffTitlesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="staffTitlesTable.create"/>
+                <button id="editBtn"
+                        action="staffTitlesTable.edit"/>
+                <button id="removeBtn"
+                        action="staffTitlesTable.remove"/>
+                <button id="excelBtn"
+                        action="staffTitlesTable.excel"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.ces.web.sex.SexEdit"
+        datasource="sexDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ces.web.sex">
+    <dsContext>
+        <datasource id="sexDs"
+                    class="com.company.ces.entity.category.Sex"
+                    view="_local"/>
+    </dsContext>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="sexDs">
+            <column width="200px">
+                <field id="sex_id"/>
+                <field id="sex_name"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

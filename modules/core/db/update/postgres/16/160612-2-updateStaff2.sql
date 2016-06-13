@@ -1,0 +1,2 @@
+alter table CES_STAFF add constraint FK_CES_STAFF_POSISTION_ID foreign key (POSISTION_ID) references CES_STAFF_POSISTION(ID);
+create index IDX_CES_STAFF_POSISTION on CES_STAFF (POSISTION_ID);

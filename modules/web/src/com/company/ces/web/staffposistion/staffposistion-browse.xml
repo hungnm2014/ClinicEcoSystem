@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ces.web.staffposistion.StaffPosistionBrowse"
+        focusComponent="staffPosistionsTable"
+        lookupComponent="staffPosistionsTable"
+        messagesPack="com.company.ces.web.staffposistion">
+    <dsContext>
+        <collectionDatasource id="staffPosistionsDs"
+                              class="com.company.ces.entity.category.StaffPosistion"
+                              view="_local">
+            <query>
+                <![CDATA[select e from ces$StaffPosistion e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="staffPosistionsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="staffPosistionsTable"
+                datasource="staffPosistionsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="staffPosistionsTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="excel"/>
+            </actions>
+            <columns>
+                <column id="pos_id"/>
+                <column id="pos_name"/>
+            </columns>
+            <rows datasource="staffPosistionsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="staffPosistionsTable.create"/>
+                <button id="editBtn"
+                        action="staffPosistionsTable.edit"/>
+                <button id="removeBtn"
+                        action="staffPosistionsTable.remove"/>
+                <button id="excelBtn"
+                        action="staffPosistionsTable.excel"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

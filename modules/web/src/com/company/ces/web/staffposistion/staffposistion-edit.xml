@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.ces.web.staffposistion.StaffPosistionEdit"
+        datasource="staffPosistionDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.ces.web.staffposistion">
+    <dsContext>
+        <datasource id="staffPosistionDs"
+                    class="com.company.ces.entity.category.StaffPosistion"
+                    view="_local"/>
+    </dsContext>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="staffPosistionDs">
+            <column width="200px">
+                <field id="pos_id"/>
+                <field id="pos_name"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

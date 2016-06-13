@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ces.web.staff.StaffBrowse"
+        focusComponent="staffsTable"
+        lookupComponent="staffsTable"
+        messagesPack="com.company.ces.web.staff">
+    <dsContext>
+        <collectionDatasource id="staffsDs"
+                              class="com.company.ces.entity.category.Staff"
+                              view="staff-view">
+            <query>
+                <![CDATA[select e from ces$Staff e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="staffsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="staffsTable"
+                datasource="staffsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="staffsTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="department"/>
+                <column id="fullname"/>
+                <column id="licenseId"/>
+                <column id="dateofbirth"/>
+                <column id="sex"/>
+                <column id="title"/>
+                <column id="posistion"/>
+                <column id="address"/>
+                <column id="workphone"/>
+                <column id="homephone"/>
+                <column id="degree"/>
+                <column id="email"/>
+                <column id="imageFileId"/>
+            </columns>
+            <rows datasource="staffsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="staffsTable.create"/>
+                <button id="editBtn"
+                        action="staffsTable.edit"/>
+                <button id="removeBtn"
+                        action="staffsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

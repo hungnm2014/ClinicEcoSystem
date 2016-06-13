@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="/screens.xml"/>
+    <screen id="ces$StaffPosistion.browse"
+            template="com/company/ces/web/staffposistion/staffposistion-browse.xml"/>
+    <screen id="ces$StaffPosistion.edit"
+            template="com/company/ces/web/staffposistion/staffposistion-edit.xml"/>
+    <screen id="ces$StaffTitle.browse"
+            template="com/company/ces/web/stafftitle/stafftitle-browse.xml"/>
+    <screen id="ces$StaffTitle.edit"
+            template="com/company/ces/web/stafftitle/stafftitle-edit.xml"/>
+    <screen id="ces$Sex.browse"
+            template="com/company/ces/web/sex/sex-browse.xml"/>
+    <screen id="ces$Sex.edit"
+            template="com/company/ces/web/sex/sex-edit.xml"/>
+    <screen id="ces$Staff.browse"
+            template="com/company/ces/web/staff/staff-browse.xml"/>
+    <screen id="ces$Staff.edit"
+            template="com/company/ces/web/staff/staff-edit.xml"/>
+</screen-config>

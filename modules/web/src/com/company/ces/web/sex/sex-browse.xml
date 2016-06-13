@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.ces.web.sex.SexBrowse"
+        focusComponent="sexesTable"
+        lookupComponent="sexesTable"
+        messagesPack="com.company.ces.web.sex">
+    <dsContext>
+        <collectionDatasource id="sexesDs"
+                              class="com.company.ces.entity.category.Sex"
+                              view="_local">
+            <query>
+                <![CDATA[select e from ces$Sex e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <layout expand="sexesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="sexesTable"
+                datasource="sexesDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="sexesTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="excel"/>
+            </actions>
+            <columns>
+                <column id="sex_id"/>
+                <column id="sex_name"/>
+            </columns>
+            <rows datasource="sexesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="sexesTable.create"/>
+                <button id="editBtn"
+                        action="sexesTable.edit"/>
+                <button id="removeBtn"
+                        action="sexesTable.remove"/>
+                <button id="excelBtn"
+                        action="sexesTable.excel"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

@@ -1,0 +1,2 @@
+create unique index IDX_CES_STAFF_TITLE_UNIQ_TITLE_ID on CES_STAFF_TITLE (TITLE_ID) where DELETE_TS is null ;
+create unique index IDX_CES_STAFF_TITLE_UNIQ_TITLE_NAME on CES_STAFF_TITLE (TITLE_NAME) where DELETE_TS is null ;

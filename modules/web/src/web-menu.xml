@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="Category Management"
+          insertBefore="administration">
+        <item id="ces$StaffPosistion.browse"/>
+        <item id="ces$StaffTitle.browse"/>
+        <item id="ces$Sex.browse"/>
+        <item id="ces$Staff.browse"/>
+    </menu>
+</menu-config>
